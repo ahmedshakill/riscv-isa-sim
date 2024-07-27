@@ -190,6 +190,15 @@ static uint32_t lui(unsigned int dest, uint32_t imm)
     MATCH_LUI;
 }
 
+static uint32_t lui2(unsigned int dest, uint32_t imm) __attribute__ ((unused));
+static uint32_t lui2(unsigned int dest, uint32_t imm)
+{
+  return (bits(imm, 19, 0) << 12) |
+    (dest << 7) |
+    MATCH_LUI2;
+}
+
+
 /*
 static uint32_t csrci(unsigned int csr, uint16_t imm) __attribute__ ((unused));
 static uint32_t csrci(unsigned int csr, uint16_t imm) {

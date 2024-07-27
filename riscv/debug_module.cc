@@ -668,6 +668,7 @@ bool debug_module_t::perform_abstract_command()
         // Set mstatus.fs
         assert((MSTATUS_FS & 0xfff) == 0);
         write32(debug_abstract, i++, lui(S0, MSTATUS_FS >> 12));
+        write32(debug_abstract, i++, lui2(S0, MSTATUS_FS >> 12));
         write32(debug_abstract, i++, csrrs(ZERO, S0, CSR_MSTATUS));
       }
 

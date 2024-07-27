@@ -960,6 +960,7 @@ void disassembler_t::add_instructions(const isa_parser_t* isa)
   DEFINE_BTYPE(bgeu)
 
   DEFINE_LTYPE(lui);
+  DEFINE_LTYPE(lui2);
   DEFINE_LTYPE(auipc);
 
   add_insn(new disasm_insn_t("ret", match_jalr | match_rs1_ra, mask_jalr | mask_rd | mask_rs1 | mask_imm, {}));
